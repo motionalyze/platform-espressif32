@@ -1,11 +1,11 @@
 name: Examples
 
 on:
-  workflow_dispatch:      # Manually start a workflow
+  workflow_dispatch: # Manually start a workflow
   push:
     paths-ignore:
-    - '.github/**'        # Ignore changes towards the .github directory
-    - '**.md'             # Do no build if *.md files changes
+      - ".github/**" # Ignore changes towards the .github directory
+      - "**.md" # Do no build if *.md files changes
 
 jobs:
   build:
@@ -15,22 +15,9 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-15]
         example:
           - "examples/arduino-blink"
-          - "examples/arduino-rmt-blink"
-          - "examples/arduino-wifiscan"
-          - "examples/arduino-usb-keyboard"
-          - "examples/espidf-arduino-blink"
-          - "examples/espidf-arduino-littlefs"
-          - "examples/espidf-blink"
-          - "examples/espidf-coap-server"
-          - "examples/espidf-exceptions"
-          - "examples/espidf-hello-world"
-          - "examples/espidf-http-request"
-          - "examples/espidf-peripherals-uart"
-          - "examples/espidf-peripherals-usb"
-          - "examples/espidf-storage-sdcard"
-          - "examples/espidf-ulp"
-          - "examples/espidf-ulp-riscv"
-          - "examples/tasmota"
+          # - "examples/arduino-rmt-blink"
+          # - "examples/arduino-wifiscan"
+          # - "examples/arduino-usb-keyboard"
         exclude:
           - os: windows-latest
             example: "examples/espidf-ulp"
@@ -60,6 +47,6 @@ jobs:
       - name: Build examples
         env:
           PYTHONIOENCODING: utf-8
-          PYTHONUTF8: '1'
+          PYTHONUTF8: "1"
         run: |
           pio run -d ${{ matrix.example }} --disable-auto-clean

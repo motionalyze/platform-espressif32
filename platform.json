@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/tasmota/platform-espressif32.git"
   },
-  "version": "2025.08.30",
+  "version": "2025.08.30.2-motionalyze",
   "frameworks": {
     "arduino": {
       "script": "builder/frameworks/arduino.py"
@@ -90,7 +90,7 @@
       "package-version": "5.3.0",
       "version": "https://github.com/pioarduino/esp_install/releases/download/v5.3.0/esp_install-v5.3.0.zip"
     },
-      "contrib-piohome": {
+    "contrib-piohome": {
       "optional": true,
       "owner": "pioarduino",
       "package-version": "3.4.4",
